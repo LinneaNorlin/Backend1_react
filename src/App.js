@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import IssueDetailsView from './components/IssueDetailsView';
+import IssueForm from './components/IssueForm';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+
+      {/* Create issue funkar! */}
+      <Route path='/' element={ 
+        <IssueForm />
+      } />
+
+      {/* Länka till spec issue funkar! */}
+      <Route path='/details/:id' element={ 
+        <IssueDetailsView />
+      } />
+
+    </Routes>
+
   );
 }
 

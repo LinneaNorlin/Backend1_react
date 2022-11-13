@@ -29,58 +29,60 @@ const IssueDetailsView = () => {
       <div className='card-details'>
       { issue && 
         <div>
-
           <div className='col-12 mt-2'>
-            <h3>{issue.subject}</h3>
+            <h2>{issue.subject}</h2>
 
-            <div className='mt-3 d-flex justify-content-between border row'>
-              <div className='col-6 border border-primary'>
-                <small>{moment(issue.created).format('DD MMMM YYYY, h:mm a')}</small>
-                <p className='text-status'>{issue.status.status}</p>
+            <div className='mt-3 row'>
+              <div className='col-6'>
+                <p className='mt-2'>Case Created At</p>
+                <small>{moment(issue.created).format('DD MMMM YYYY, h:mm')}</small>
               </div>
-              <div className='col-6 border border-danger justify-content-end'>
+              <div className='col-6 text-end'>
+                <p className='mt-2'>Current Case Status</p>
+                <small className='text-status'>{issue.status.status}</small>
+              </div>
+            </div>
+
+            <div className='mt-3 row'>
+              <div className='col-6'>
+                <p className='mt-2'>By User</p>
+                <p className='m-0'>{issue.user.firstName} {issue.user.lastName}</p>
+                <small>{issue.user.email}</small>
+              </div>
+              <div className='col-6 text-end'>
                 <Status />
               </div>
             </div>
-
-            <div className='col-6 border border-danger justify-content-end'>
-              <p className='m-0'>{issue.user.firstName} {issue.user.lastName}</p>
-              <small>{issue.user.email}</small>
-            </div>
-
-          {/* this div ends the row of card, 12 cols */}
           </div>
 
           <div>
-            <p className='mt-2'>{issue.description}</p>
+            <p className='mt-2'>Issue:</p>
+            <p className='mt-2 mb-5'>{issue.description}</p>
           </div>
 
           < CommentForm issue={issue} />
 
-          <div className='bg-card bg-success text-light'>
-            <p className='mt-2'>
-            Here comes Case Comments: 
-              { issue.comments
-                .map(comment => 
-                  <Comment key={comment.id} comment={comment} />) 
-              }
-            </p>
+          <div className='bg-card bg-gray border-top border-dark mt-5'>
+            <div className='mt-3 col-12 col-md-11'>
+              <p className="text-label">List Of All Comments</p>
+                { issue.comments
+                  .map(comment => 
+                    <Comment key={comment.id} comment={comment} />) 
+                }
+            </div>
           </div>
 
-          <p>user id? {issue.user.id}</p>
+          <div className='text-center mt-4 mb-2'>
+            <i className="fa-solid fa-angles-up text-link" onClick={() => window.scrollTo(0, 0)}></i>
+          </div>
         
         </div>
-      // here are the } end of issue &&: (after this I have no issue)
       }
-
-      {/* this is the /div for the end of card: */}
       </div>
 
       <div className='text-center text-link mt-4 mb-4'>
         <Link to="/" className='text-link'><i className="fa-solid fa-backward"></i> Go back</Link> 
       </div>
-
-
 
     </div>
   )

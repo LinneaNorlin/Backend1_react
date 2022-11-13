@@ -33,12 +33,12 @@ const IssueList = () => {
                         <Link 
                         to={`/details/${issue.id}`}  
                         className="text-center text-link mt-4 mb-4">
-                            <p>Edit case</p>
+                            <p><i className="me-2 fa-regular fa-pen-to-square"></i>Edit case</p>
                         </Link>
                     </div>)}
                 </div>
                 <div className='text-center text-link mt-4 mb-4'>
-                    <Link to="/" className='text-link' onClick={() => window.scrollTo(0, 0)}><i className="fa-solid fa-plus"></i> Add New Case?</Link> 
+                    <p className='text-link' onClick={() => window.scrollTo(0, 0)}><i className="fa-solid fa-plus"></i> Add New Case?</p> 
                 </div>
             </div>
 

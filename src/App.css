@@ -28,6 +28,7 @@ body, html {
   font-size: .9rem;
   font-weight: 700;
   cursor: pointer;
+  text-transform: none;
 }
 .btn:hover {
   background-color: #284444;
@@ -98,7 +99,7 @@ body, html {
   border: 1px solid transparent;
   outline: none;
   border-radius: .8rem;
-  min-width: 250px;
+  min-width: 180px;
   box-shadow: 3px 3px 5px #0000002f;
 }
 .bg-card:hover,
@@ -116,4 +117,11 @@ body, html {
   border-radius: .8rem;
   min-width: 250px;
   box-shadow: 3px 3px 5px #0000002f;
+}
+.bg-select {
+  border: 1px solid var(--clr-primary);
+}
+.bg-gray {
+  background-color: var(--clr-gray);
+  color: var(--clr-light);
 }

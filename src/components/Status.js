@@ -34,16 +34,16 @@ const Status = () => {
     }
 
   return (
-    <div>
+    <div className=''>
         <form onSubmit={handleUpdateSubmit}>
-        <div className="mb-3">
-            <label className="form-label">Ändra Status</label>
-            <select className="form-select" onChange={(e) => setStatusId(e.target.value)} required>
-                <option value={0}>-- Ange en status --</option>
-                {statuses.map(status => <option key={status.id} value={status.id}>{status.id} - {status.status}</option>)}
-            </select>
-            <button type="submit" className="btn btn-secondary">Spara ändring</button>
-        </div>    
+            <div className="mb-3 bg-card bg-select text-center">
+                <p className='mt-2 text-link'>Change Status</p>
+                <select className="form-select" onChange={(e) => setStatusId(e.target.value)} required>
+                    <option value={0}>-- Select Status --</option>
+                    {statuses.map(status => <option key={status.id} value={status.id}>{status.id} - {status.status}</option>)}
+                </select>
+                <button type="submit" className="btn btn-secondary">Save Status</button>
+            </div>    
         </form>
     </div>
   )

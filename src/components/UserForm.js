@@ -54,7 +54,7 @@ const UserForm = () => {
 
                 <p className='text-center mt-4'>Already registered?</p>
                 <div className='text-center text-link mb-4'>
-                    <Link to="/" className='text-link mb-4' onClick={() => window.scrollTo(0, 0)}><i className="fa-solid fa-plus"></i> Go To Create New Case</Link> 
+                    <p className='text-link mb-4' onClick={() => window.scrollTo(0, 0)}><i className="fa-solid fa-plus"></i> Go To Create New Case</p> 
                 </div>
 
             </form>

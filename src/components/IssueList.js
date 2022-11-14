@@ -37,8 +37,8 @@ const IssueList = () => {
                         </Link>
                     </div>)}
                 </div>
-                <div className='text-center text-link mt-4 mb-4'>
-                    <p className='text-link' onClick={() => window.scrollTo(0, 0)}><i className="fa-solid fa-plus"></i> Add New Case?</p> 
+                <div className='text-center mt-4'>
+                    <p className='text-link mb-4' onClick={() => window.scrollTo(0, 0)}><i className="fa-solid fa-plus"></i> Add New Case?</p> 
                 </div>
             </div>
 

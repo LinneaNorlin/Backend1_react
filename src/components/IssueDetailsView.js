@@ -37,7 +37,7 @@ const IssueDetailsView = () => {
                 <p className='mt-2'>Case Created At</p>
                 <small>{moment(issue.created).format('DD MMMM YYYY, h:mm')}</small>
               </div>
-              <div className='col-6 text-end'>
+              <div className='col-6 text-end pe-4'>
                 <p className='mt-2'>Current Case Status</p>
                 <small className='text-status'>{issue.status.status}</small>
               </div>
@@ -66,6 +66,7 @@ const IssueDetailsView = () => {
             <div className='mt-3 col-12 col-md-11'>
               <p className="text-label">List Of All Comments</p>
                 { issue.comments
+                  .sort((a, b) => b.created > a.created ? 1 : -1)
                   .map(comment => 
                     <Comment key={comment.id} comment={comment} />) 
                 }

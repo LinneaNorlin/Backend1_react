@@ -29,12 +29,16 @@ const IssueList = () => {
                         <h3>{issue.subject}</h3>
                         <small>{moment(issue.created).format('DD MMMM YYYY, h:mm a')}</small>
                         <p className='text-status'>{issue.status.status}</p>
-                        <p>{issue.user.firstName} {issue.user.lastName}</p>
-                        <Link 
-                        to={`/details/${issue.id}`}  
-                        className="text-center text-link mt-4 mb-4">
-                            <p><i className="me-2 fa-regular fa-pen-to-square"></i>Edit case</p>
-                        </Link>
+                        <div className='d-flex justify-content-between'>
+                            <div>
+                                <p>{issue.user.firstName} {issue.user.lastName}</p>
+                            </div>
+                            <div>
+                                <Link to={`/details/${issue.id}`} className="text-center text-link mt-4 mb-4">
+                                    <p className='me-2'><i className="me-2 fa-regular fa-pen-to-square"></i>Edit case</p>
+                                </Link>
+                            </div>
+                        </div>
                     </div>)}
                 </div>
                 <div className='text-center mt-4'>

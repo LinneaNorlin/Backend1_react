@@ -40,6 +40,11 @@ const IssueForm = () => {
         <div className='mt-3'>
             <h4 className='subheadline'>Create New Case</h4>
 
+            <p className='text-center mt-4'>Not registered yet?</p>
+                <div className='text-center'>
+                <p className='text-link mb-4' onClick={() => window.scrollTo(0, document.body.scrollHeight)}><i className="fa-solid fa-plus"></i> Go To Register New User</p> 
+            </div>
+
             <form onSubmit={handleSubmit} className="px-3 col-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
                 <div className="mb-3">
                     <label className="form-label">User Name</label>

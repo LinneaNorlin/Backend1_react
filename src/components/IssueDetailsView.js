@@ -62,9 +62,10 @@ const IssueDetailsView = () => {
 
           < CommentForm issue={issue} />
 
-          <div className='bg-card bg-gray border-top border-dark mt-5'>
+          <div className='bg-card bg-gray mt-5'>
             <div className='mt-3 col-12 col-md-11'>
               <p className="text-label">List Of All Comments</p>
+                { !issue.comments.length && <p className='subheadline text-light'>No comments to show!</p>}
                 { issue.comments
                   .sort((a, b) => b.created > a.created ? 1 : -1)
                   .map(comment => 

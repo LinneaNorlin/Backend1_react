@@ -60,6 +60,7 @@ body, html {
 .text-status {
   color: var(--clr-red);
 }
+/* ta bort headline? */
 .headline {
   color: var(--clr-gray);
   font-size: 250%;
